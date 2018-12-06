@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></LinearLayout>
+
+    <com.ashlikun.emoji.widget.EmoticonsEditText
+        android:id="@+id/emojiEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:cursorVisible="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_vertical"
+        android:inputType="textMultiLine"
+        android:maxLines="4"
+        android:minHeight="48dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="5dp"
+        android:paddingRight="4dp"
+        android:paddingBottom="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <com.ashlikun.emoji.EmojiView
+        android:id="@+id/emojiView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></com.ashlikun.emoji.EmojiView>
+</LinearLayout>
