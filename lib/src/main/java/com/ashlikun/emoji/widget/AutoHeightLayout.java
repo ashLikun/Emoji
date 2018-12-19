@@ -13,9 +13,6 @@ import com.ashlikun.emoji.R;
 
 
 public abstract class AutoHeightLayout extends SoftKeyboardSizeWatchLayout implements SoftKeyboardSizeWatchLayout.OnResizeListener {
-
-    private static final int ID_CHILD = R.id.id_autolayout;
-
     protected Context mContext;
     protected int mMaxParentHeight;
     protected int mSoftKeyboardHeight;
@@ -26,27 +23,6 @@ public abstract class AutoHeightLayout extends SoftKeyboardSizeWatchLayout imple
         this.mContext = context;
         mSoftKeyboardHeight = EmoticonsKeyboardUtils.getDefKeyboardHeight(mContext);
         addOnResizeListener(this);
-    }
-
-    @Override
-    public void addView(View child, int index, ViewGroup.LayoutParams params) {
-        int childSum = getChildCount();
-        if (childSum > 1) {
-            throw new IllegalStateException("can host only one direct child");
-        }
-        super.addView(child, index, params);
-        if (childSum == 0) {
-            if (child.getId() == View.NO_ID) {
-                child.setId(ID_CHILD);
-            }
-            LayoutParams paramsChild = (LayoutParams) child.getLayoutParams();
-            paramsChild.addRule(ALIGN_PARENT_BOTTOM);
-            child.setLayoutParams(paramsChild);
-        } else if (childSum == 1) {
-            LayoutParams paramsChild = (LayoutParams) child.getLayoutParams();
-            paramsChild.addRule(ABOVE, ID_CHILD);
-            child.setLayoutParams(paramsChild);
-        }
     }
 
     @Override
