@@ -1,7 +1,8 @@
 package com.ashlikun.emoji.simple;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ashlikun.emoji.DefEmoticons;
 import com.ashlikun.emoji.EmojiBean;

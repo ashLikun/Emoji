@@ -1,8 +1,9 @@
 package com.ashlikun.emoji.widget;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.ashlikun.emoji.adapter.PageSetAdapter;
 import com.ashlikun.emoji.data.PageSetEntity;

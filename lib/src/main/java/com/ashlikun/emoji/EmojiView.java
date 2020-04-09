@@ -1,10 +1,11 @@
 package com.ashlikun.emoji;
 
 import android.content.Context;
-import android.support.annotation.AttrRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+
+import androidx.annotation.AttrRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.ashlikun.emoji.adapter.PageSetAdapter;
 import com.ashlikun.emoji.data.PageSetEntity;

@@ -1,9 +1,10 @@
 package com.ashlikun.emoji.widget;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+
+import androidx.appcompat.widget.AppCompatEditText;
 
 import com.ashlikun.emoji.EmoticonFilter;
 
