@@ -15,7 +15,6 @@ import java.util.List;
  */
 public class SoftKeyboardSizeWatchLayout extends RelativeLayout {
 
-    private Context mContext;
     private int mOldh = -1;
     private int mNowh = -1;
     protected int mScreenHeight = 0;
@@ -30,7 +29,6 @@ public class SoftKeyboardSizeWatchLayout extends RelativeLayout {
 
     public SoftKeyboardSizeWatchLayout(Context context, AttributeSet attrs,int defStyleAttr) {
         super(context, attrs,defStyleAttr);
-        this.mContext = context;
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
