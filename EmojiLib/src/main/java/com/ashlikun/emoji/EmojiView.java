@@ -34,16 +34,17 @@ public class EmojiView extends AutoHeightLayout implements EmoticonsFuncView.OnE
         init(context, attrs);
     }
 
-    @Override
-    public void onSoftKeyboardHeightChanged(int i) {
-
-    }
-
     public EmojiView(@NonNull Context context, @Nullable AttributeSet attrs,
                      @AttrRes int defStyleAttr) {
         super(context, attrs);
         init(context, attrs);
     }
+
+    @Override
+    public void onSoftKeyboardHeightChanged(int i) {
+
+    }
+
 
     private void init(Context context, AttributeSet attrs) {
         inflate(context, R.layout.layout_chatinput_emoji, this);

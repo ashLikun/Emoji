@@ -9,14 +9,22 @@ import android.util.AttributeSet;
 import com.ashlikun.emoji.EmoticonsKeyboardUtils;
 
 
-public abstract class AutoHeightLayout extends SoftKeyboardSizeWatchLayout implements SoftKeyboardSizeWatchLayout.OnResizeListener {
+public class AutoHeightLayout extends SoftKeyboardSizeWatchLayout implements SoftKeyboardSizeWatchLayout.OnResizeListener {
     protected Context mContext;
     protected int mMaxParentHeight;
     protected int mSoftKeyboardHeight;
     protected boolean mConfigurationChangedFlag = false;
 
+    public AutoHeightLayout(Context context) {
+        this(context, null);
+    }
+
     public AutoHeightLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
+    }
+
+    public AutoHeightLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
         this.mContext = context;
         mSoftKeyboardHeight = EmoticonsKeyboardUtils.getDefKeyboardHeight(mContext);
         addOnResizeListener(this);
@@ -84,7 +92,12 @@ public abstract class AutoHeightLayout extends SoftKeyboardSizeWatchLayout imple
     public void onSoftClose() {
     }
 
-    public abstract void onSoftKeyboardHeightChanged(int height);
+    /**
+     * 键盘高度改变了
+     */
+    public void onSoftKeyboardHeightChanged(int height) {
+
+    }
 
     private OnMaxParentHeightChangeListener maxParentHeightChangeListener;
 

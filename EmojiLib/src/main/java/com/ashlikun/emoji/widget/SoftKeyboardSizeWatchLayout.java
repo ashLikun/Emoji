@@ -1,6 +1,5 @@
 package com.ashlikun.emoji.widget;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -21,15 +20,22 @@ public class SoftKeyboardSizeWatchLayout extends RelativeLayout {
     private int mNowh = -1;
     protected int mScreenHeight = 0;
     protected boolean mIsSoftKeyboardPop = false;
+    public SoftKeyboardSizeWatchLayout(Context context) {
+        this(context, null);
+    }
 
     public SoftKeyboardSizeWatchLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
+    }
+
+    public SoftKeyboardSizeWatchLayout(Context context, AttributeSet attrs,int defStyleAttr) {
+        super(context, attrs,defStyleAttr);
         this.mContext = context;
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 Rect r = new Rect();
-                ((Activity) mContext).getWindow().getDecorView().getWindowVisibleDisplayFrame(r);
+                getRootView().getWindowVisibleDisplayFrame(r);
                 if (mScreenHeight == 0) {
                     mScreenHeight = r.bottom;
                 } else {
@@ -62,6 +68,7 @@ public class SoftKeyboardSizeWatchLayout extends RelativeLayout {
     public boolean isSoftKeyboardPop() {
         return mIsSoftKeyboardPop;
     }
+
 
     private List<OnResizeListener> mListenerList;
 
